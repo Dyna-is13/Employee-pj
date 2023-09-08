@@ -1,0 +1,45 @@
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#properties.hibernate.format_sql=true
+
+
+
+
+
+  application:
+      name:
+        Keycloak for BackChannel
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: ${JWK_SET_URI}
+
+#server port
+
+server:
+  port: 8088
+
+
+
+keycloak:
+  realm: ${REALM}
+  auth-server-url: ${AUTH_SERVER_URL}
+  resource: ${RESOURCE}
+  public-client: true
+  bearer-only: true
+
+
+
+
